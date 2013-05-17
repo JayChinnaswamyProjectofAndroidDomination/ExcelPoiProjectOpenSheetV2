@@ -25,9 +25,21 @@ public class ExcelKnowledgeObject {
 public ExcelKnowledgeObject(){
 	
 	 try {
-       
+		 
+		//get object which represents the workspace  
+		// IWorkspace workspace = ResourcesPlugin.getWorkspace(); 
+		//get location of workspace (java.io.File)  
+		// File workspaceDirectory = workspace.getRoot().getLocation().toFile()
+		 
+		 //ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+		//FileInputStream myExcelFile = (FileInputStream) classLoader.getResourceAsStream("six_day_week.xls");
+		
+		//FileInputStream myExcelFile = new FileInputStream(new File(ExcelKnowledgeObject.getClass().getClassLoader().getResource("six_day_week.xls")));
+		 
 		 //NOTICE THE FILE HAS TO BE SAVED IN A 97_2003 form of Excel to work.....  
 		 myExcelFile = new FileInputStream(new File("c:\\users\\christopherroche\\My Documents\\six_day_week.xls"));
+		 // myExcelFile = new FileInputStream(new File("six_day_week.xls"));
+
 
 		 /** Create a POIFSFileSystem object**/
 		 myFileSystem = new POIFSFileSystem(myExcelFile);
